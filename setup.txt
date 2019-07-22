@@ -1,0 +1,43 @@
+# 1. INSTALL conda3 env (cuda 9.2)
+# 2. INSTALL kymatio
+# 3. reproduce results of Fig 8 (you need 2 GPUs)
+
+1. 
+export PATH="$PATH:/home/zsx/anaconda3/bin"
+
+conda create --name py36 python=3.6
+source activate py36
+
+conda install scipy
+conda install pytorch=1.0.0 cuda92 -c pytorch
+
+export CUDA_INC_DIR=/usr/local/cuda-9.2/include
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-9.2/lib64
+export PATH=$PATH:/usr/local/cuda-9.2/bin/
+pip install scikit-cuda
+pip install cupy-cuda92
+
+2. 
+export PATH="$PATH:/home/zsx/anaconda3/bin"
+source activate py36
+python setup.py install
+
+3.
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-9.2/lib64
+export CUDA_VISIBLE_DEVICES=0,1
+export KYMATIO_BACKEND=skcuda
+export PATH="$PATH:/home/zsx/anaconda3/bin"
+source activate py36
+
+To reproduce results in Figure 8
+step1:
+cd paper1
+run script run_boat_ps2par.sh and run_cartoond_ps2par.sh
+step2:
+compute the number of coeffs using compute_coeff_ps2.py
+for sanity check, use compute_coeff.py
+step3:
+compare results with the two pdf files (plot_psnr_nb_*_Run.pdf)
+
+p.s.
+to compute the filter: use export_filter_bumpsteerableg.m in matlab folder

@@ -1,0 +1,107 @@
+Metadata-Version: 2.1
+Name: Kymatio
+Version: 0.1.1
+Summary: Wavelet scattering transforms in Python with GPU acceleration
+Home-page: https://kymatio.github.io
+Author: Edouard Oyallon, Eugene Belilovsky, Sergey Zagoruyko, Michael Eickenberg, Mathieu Andreux, Georgios Exarchakis, Louis Thiry, Vincent Lostanlen, Joakim Anden, Tomas Angles, Gabriel Huang, Roberto Leonarduzzi
+Author-email: edouard.oyallon@centralesupelec.fr, belilove@iro.umontreal.ca, sergey.zagoruyko@inria.fr, michael.eickenberg@berkeley.edu, mathieu.andreux@ens.fr, georgios.exarchakis@ens.fr, louis.thiry@ens.fr, vincent.lostanlen@nyu.edu, janden@flatironinstitute.org, tomas.angles@ens.fr, gabriel.huang@umontreal.ca, roberto.leonarduzzi@ens.fr
+License: BSD-3-Clause
+Download-URL: https://github.com/kymatio/kymatio/releases
+Description: Kymatio: wavelet scattering in PyTorch
+        ======================================
+        
+        Kymatio is a Python package for wavelet scattering transforms, built on top of PyTorch.
+        blb
+        
+        
+        Use Kymatio if you need a library that:
+        * integrates wavelet scattering in a deep learning architecture,
+        * supports 1-D, 2-D, and 3-D wavelets, and
+        * runs seamlessly on CPU and GPU hardware.
+        
+        Website: [https://kymatio.github.io](https://kymatio.github.io)
+        
+        
+        ## Installation
+        
+        ### Dependencies
+        
+        Kymatio requires:
+        
+        * Python (>= 3.6)
+        * PyTorch (>= 0.4)
+        * SciPy (>= 0.13)
+        
+        We also strongly recommend running Kymatio in a Conda environment since this
+        simplifies installation of PyTorch.
+        
+        ### Linux/macOS
+        
+        ```
+        conda install pytorch torchvision -c pytorch
+        python install setup.py
+        ```
+        
+        
+        The software was tested on Linux with Anaconda Python 3 and
+        various GPUs, including Titan X, 1080s, 980s, K20s, and Titan X Pascal.
+        
+        The software uses PyTorch + NumPy FFT on CPU, and PyTorch + CuPy + CuFFT on GPU.
+        
+        
+        If you use this code in your work please cite our paper:
+        
+        The scattering authors, [*Kymatio: Fast Scattering in 1-D,2-D,3-D*]()
+        
+        This code unifies multiple previous efforts:
+            - PyScatWave/ScatWave,
+            - ScatNetLight,
+            - ScatNet, and others
+        
+        ### Optimized package
+        
+        If you have a CUDA-enabled GPU, you may run
+        
+        ```
+        pip install -r requirements_optional_cuda.txt
+        ```
+        
+        after installation to install the optimized `skcuda` backend. To enable it, set
+        the `KYMATIO_BACKEND` environment variable to `skcuda`. For more information,
+        see the documentation.
+        
+        
+        ## Documentation
+        
+        To build the documentation, please run
+        
+        ```
+        pip install -r requirements_optional.txt
+        cd doc; make clean; make html
+        ```
+        
+        You may then read the documentation in `doc/build/html/index.html`.
+        
+Platform: UNKNOWN
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Multimedia :: Graphics :: 3D Modeling
+Classifier: Topic :: Multimedia :: Sound/Audio :: Analysis
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Topic :: Scientific/Engineering :: Image Recognition
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
