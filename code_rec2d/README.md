@@ -15,4 +15,4 @@ Before you run the script, make sure that you have chosen the right parameter de
 Run ./run_cartoond_ps2par.sh, by default it is with dj=1 (same for ./run_boat_ps2par.sh)
 
 ### Results
-It may take a few hours / days to obtain all the results. For details of how to plot the results, please check the plot_psnr_nb_boat_Run.pd and plot_psnr_nb_cartoond_Run.pdf files.
+It may take a few hours / days to obtain all the results. For details of how to plot the results, please check the plot_psnr_nb_boat_Run.pd and plot_psnr_nb_cartoond_Run.pdf files. Compute the number of coeffs using compute_coeff_ps2.py; for sanity check, use compute_coeff.py
