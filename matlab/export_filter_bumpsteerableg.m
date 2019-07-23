@@ -5,9 +5,9 @@ addpath ../scatnet-0.2a
 addpath_scatnet;
 
 %% get data and estimate spectral
-N=64;
-J=6;
-L=4;
+N=256;
+J=8;
+L=8;
 filtopts = struct();
 filtopts.J=J;
 filtopts.L=L;
@@ -47,8 +47,6 @@ assert(length(filnew.psi.filter)==filid-1);
 
 filt_fftphi = filnew.phi.filter.coefft{1};
 
-
-%path = './filters_local/';
 path = './filters/';
 filename = sprintf('bumpsteerableg%d_fft2d_N%d_J%d_L%d.mat',filter_id,N,J,L);
 
