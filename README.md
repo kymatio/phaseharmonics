@@ -10,4 +10,4 @@ This is an implementation of the wavelet phase harmonic transform based on Kymat
 For general installation, please follow the instructions at [(kymatio)](https://github.com/kymatio/kymatio). You may also use the script ./install_cuda92.sh to setup GPU-supported anaconda env.
 
 ### Reproducing 2d reconstructions in paper [1]. 
-The code is tested on Ubuntu 16 + two TITAN Xp GPU + Nvidia Driver Version: 410.66. Please follow the README in the folder code_rec2d. Matlab is needed to generate 2d wavelet filters.
+The code is tested on Ubuntu 16 + two TITAN Xp GPU + cuda 9.2 + Nvidia Driver Version: 410.66. Please follow the README in the folder code_rec2d. Matlab is needed to generate 2d wavelet filters.
