@@ -1,6 +1,3 @@
-PhaseHarmonics: Wavelet phase harmonic transform in PyTorch
-======================================
-
 To reproduce the Figure 8 in the paper Phase Harmonic Correlations and Convolutional Neural Networks, you need two GPUs to run the code in this folder. 
 
 ### Create 2d Bump steerable wavelet filters
