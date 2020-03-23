@@ -12,9 +12,8 @@ First create the wavelet filters using N=64, J=6, L=8. Then run:
 If you have an Xorg diaplay, the matplotlib will show you the original image at the beginning, 
 and the recontruction image at the end (which should look alike up to a global translation).
 
-### Run reconstructions per delta_j for 10 times
+### Run reconstructions per delta_j for 10 times using 2 GPUs
 Use script run_cartoond_ps2par.sh or run_boat_ps2par.sh
-You need two GPUs to reproduce the results.
 
 First, you need to switch to the right conda env, for convenience you may run ". env.sh"
 
