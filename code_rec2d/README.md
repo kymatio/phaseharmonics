@@ -1,9 +1,16 @@
-To reproduce the Figure 8 in the paper Phase Harmonic Correlations and Convolutional Neural Networks, you need two GPUs to run the code in this folder. 
+To reproduce the Figure 8 in the paper Phase Harmonic Correlations and Convolutional Neural Networks, you need two GPUs to reproduce the results. But there is a simple which requires only one GPU. 
 
 ### Create 2d Bump steerable wavelet filters
 There are 3 major parameters to create 2d filters using the matlab script at ./matlab/export_filter_bumpsteerableg.m
 In our expereiemnt, we have chosen N=256 (image size), J=8 (maximum scale), L=8 (number of angles).
 Simply "cd ./matlab" and call "matlab -r export_filter_bumpsteerableg" should work.
+
+### Run a demo on a smaller size image
+First create the wavelet filters using N=64, J=6, L=8. Then run:
+	python cartoond/test_rec_bump_chunkid_lbfgs_gpu_N64.py
+
+If you have a Xorg diaplay, the matplotlib will show you the original image at the beginning, 
+and the recontruction image at the end (which should look alike up to a global shift).
 
 ### Run reconstructions per delta_j for 10 times
 Use script run_cartoond_ps2par.sh or run_boat_ps2par.sh
