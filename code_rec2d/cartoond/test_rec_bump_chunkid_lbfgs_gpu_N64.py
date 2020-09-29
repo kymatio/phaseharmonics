@@ -59,7 +59,7 @@ def obj_fun(x,chunk_id):
     wph_op = wph_ops[chunk_id]
     p = wph_op(x)*factr
     diff = p-Sims[chunk_id]
-    loss = torch.mul(diff,diff).mean()
+    loss = torch.mul(diff,diff).sum() # mean()
     return loss
 
 grad_err = im.clone()
