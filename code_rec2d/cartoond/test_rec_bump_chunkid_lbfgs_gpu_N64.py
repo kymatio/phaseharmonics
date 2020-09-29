@@ -2,7 +2,7 @@
 
 #import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 import scipy.optimize as opt
 import scipy.io as sio
@@ -21,8 +21,8 @@ size=64
 data = sio.loadmat('./data/demo_toy7d_N' + str(size) + '.mat')
 im = data['imgs']
 
-plt.imshow(im)
-plt.show()
+#plt.imshow(im)
+#plt.show()
 
 im = torch.tensor(im, dtype=torch.float).unsqueeze(0).unsqueeze(0).cuda()
 
@@ -110,7 +110,9 @@ def fun_and_grad_conv(x):
 def callback_print(x):
     return
 
+torch.manual_seed(999)
 x = torch.Tensor(1, 1, N, N).normal_(std=0.01)+0.5
+
 #x[0,0,0,0] = 2
 #x = x.clone().detach().requires_grad_(True) # torch.tensor(x, requires_grad=True)
 x0 = x.reshape(size**2).numpy()
@@ -121,10 +123,12 @@ res = opt.minimize(fun_and_grad_conv, x0, method='L-BFGS-B', jac=True, tol=None,
                    options={'maxiter': 500, 'gtol': 1e-14, 'ftol': 1e-14, 'maxcor': 100})
 final_loss, x_opt, niter, msg = res['fun'], res['x'], res['nit'], res['message']
 
-im_opt = np.reshape(x_opt, (size,size))
+print('final lbfgs loss is', final_loss, 'niter',niter, 'msg',msg)
+
+#im_opt = np.reshape(x_opt, (size,size))
 #tensor_opt = torch.tensor(im_opt, dtype=torch.float).unsqueeze(0).unsqueeze(0)
 
-plt.imshow(im_opt)
-plt.show()
+#plt.imshow(im_opt)
+#plt.show()
 
 #torch.save(tensor_opt, 'test_rec_bump_chunkid_lbfgs_gpu_N64.pt')
